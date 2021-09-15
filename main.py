@@ -13,7 +13,6 @@ except FileNotFoundError:
 
 words_dict = panda.to_dict(orient="records")
 
-print(words_dict)
 current_card = {}
 
 
@@ -33,11 +32,13 @@ def next_card():
     canvas.itemconfigure(language_text, text="French", fill="black")
     flip_timer = window.after(3000, func=flip_card)
 
+
 def flip_card():
     global current_card
     canvas.itemconfigure(word_text, text=current_card['English'], fill="white")
     canvas.itemconfigure(language_text, text="English", fill="white")
     canvas.itemconfigure(flashcard, image=flash_card_back)
+
 
 window = Tk()
 window.title("Flash Card")
